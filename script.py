@@ -29,10 +29,36 @@ def decrescente():
 
 escolha = input("Quer a lista decrescente ou crescente: [d/c]: ")
 
+lista_true = []
+
 if escolha == "c":
+    lista_true = crescente()
     print(crescente())
+
 elif escolha == "d":
+    lista_true = decrescente()
     print(decrescente())
 
-    
+qtt_element = len(lista_true)
+
+print(f'Existem {qtt_element} elementos na sua lista!!!!!!')
+
+while True:
+    pilha = int(input("Voce quer remover o valor de qual posição: [valor negativo para cancelar] "))
+    if pilha > qtt_element:
+        input("Não existe essa posicao na lista!!! Aperte enter para continuar!!!!  ")
+        print(lista_true)
+        print(f'Existem {qtt_element} elementos na sua lista!!!!!!')
+    elif pilha >= 0:
+        pilha -= 1
+        lista_true.pop(pilha)
+        print(lista_true)
+        qtt_element -= 1
+        print(f'Existem {qtt_element} elementos na sua lista!!!!!!')
+    elif pilha < 0:
+        break
+
+while True:
+    for y in reversed(lista_true)
+        print(x)
 
