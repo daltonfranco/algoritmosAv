@@ -43,22 +43,59 @@ qtt_element = len(lista_true)
 
 print(f'Existem {qtt_element} elementos na sua lista!!!!!!')
 
+contador = 0
+
 while True:
-    pilha = int(input("Voce quer remover o valor de qual posição: [valor negativo para cancelar] "))
-    if pilha > qtt_element:
-        input("Não existe essa posicao na lista!!! Aperte enter para continuar!!!!  ")
+    print("O q você deseja fazer?")
+    print("1 - Eliminar um valor")
+    print("2 - Adicionar um valor numa posição")
+    print("3 - Desempilhar a pilha")
+
+    resp = int(input())
+
+    if resp == 1:
+        pilha = int(input("Voce quer remover o valor: [valor negativo para cancelar] "))
+        if not pilha in lista_true:
+            input("Não existe essa posicao na lista!!! Aperte enter para continuar!!!!  ")
+            print(lista_true)
+            print(f'Existem {qtt_element} elementos na sua lista!!!!!!')
+        elif pilha in lista_true:
+            lista_true.remove(pilha)
+            print(lista_true)
+            qtt_element -= 1
+            contador += 1
+            print(f'Existem {qtt_element} elementos na sua lista!!!!!!')
+        elif pilha < 0:
+            break
+    
+    elif resp == 2:
+        
+        perg2 = int(input("Qual posicao da lista voce quer colocar um valor?: "))-1
+        perg_value = int(input("Qual o valor?: "))
+
+        comeco = []
+        fim = []
+
+        if perg2 > len(lista_true):
+            input("Nao existe essa posicao na pilha")
+        for i, value in enumerate(lista_true):
+            if i < perg2:
+                comeco.append(value)
+            else:
+                fim.append(value)
+        comeco.append(perg_value)
+        lista_true = comeco + fim
+
         print(lista_true)
+        qtt_element += 1
+        contador += 1
         print(f'Existem {qtt_element} elementos na sua lista!!!!!!')
-    elif pilha >= 0:
-        pilha -= 1
-        lista_true.pop(pilha)
-        print(lista_true)
-        qtt_element -= 1
-        print(f'Existem {qtt_element} elementos na sua lista!!!!!!')
-    elif pilha < 0:
+    
+    elif resp == 3:
         break
 
-while True:
-    for y in reversed(lista_true)
-        print(x)
+while len(lista_true) != 0:
+    print(lista_true)
+    del(lista_true[-1])
 
+print(f'Foram feitas {contador} operacoes na pilha!!!!!!!')
