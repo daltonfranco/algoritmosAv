@@ -1,6 +1,7 @@
 from rich import print
 
 lista = []
+contador = 0
 
 while True:
     perg = int(input("Escolher um valor (Valor negativo para cancelar): "))
@@ -34,16 +35,18 @@ lista_true = []
 if escolha == "c":
     lista_true = crescente()
     print(crescente())
+    contador += 1
 
 elif escolha == "d":
     lista_true = decrescente()
     print(decrescente())
+    contador += 1
 
 qtt_element = len(lista_true)
 
 print(f'Existem {qtt_element} elementos na sua lista!!!!!!')
 
-contador = 0
+
 
 while True:
     print("O q você deseja fazer?")
